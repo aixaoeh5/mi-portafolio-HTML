@@ -1,0 +1,880 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Portafolio — Web Designer • Full-Stack • Graphic Designer</title>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0b0c10; --surface:#10121a; --text:#ECECF1; --muted:#A9ABB3; --line:#24283a;
+  --accent:#E6B7C5; --accent-2:#BA9EB0; --maxw:1200px; --shadow:0 24px 64px rgba(0,0,0,.38);
+}
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  background:linear-gradient(180deg,#0a0b0f 0%,#0c0d10 30%,#0f1117 100%);
+  color:var(--text);
+  font-family:"Plus Jakarta Sans",system-ui,-apple-system,Segoe UI,Roboto,Helvetica Neue,Arial,Noto Sans,sans-serif;
+  line-height:1.6;
+  overflow-x:hidden;
+}
+a{color:inherit;text-decoration:none}
+.container{max-width:var(--maxw);margin:0 auto;padding:0 20px}
+
+/* ===== HEADER ===== */
+.header{
+  position:fixed;
+  top:0; left:0; right:0;
+  height:64px;
+  z-index:50;
+  backdrop-filter:blur(8px);
+  background:linear-gradient(to bottom,rgba(12,13,16,.85),rgba(12,13,16,.45));
+  border-bottom:1px solid var(--line);
+}
+.header-inner{
+  max-width:var(--maxw);
+  margin:0 auto;
+  padding:0 16px;
+  height:100%;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+}
+.brand{display:flex;align-items:center;gap:10px;font-weight:700;font-family:"Space Grotesk",sans-serif}
+.brand-mark{width:28px;height:28px;border-radius:10px;background:conic-gradient(from 210deg,var(--accent),var(--accent-2),#96b0ff,var(--accent));box-shadow:0 0 0 6px rgba(230,183,197,.06)}
+
+.nav{
+  display:flex;
+  gap:14px;
+  align-items:center;
+}
+.nav a{padding:8px 12px;border-radius:12px;color:var(--muted);transition:color .25s,background .25s}
+.nav a:hover{color:var(--text);background:#171922}
+.cta{
+  margin-left:10px;
+  padding:10px 14px;
+  border-radius:14px;
+  font-weight:700;
+  font-family:"Space Grotesk",sans-serif;
+  background:linear-gradient(135deg,var(--accent),var(--accent-2));
+  color:#101113;
+  border:1px solid #2a2c36;
+}
+.burger{
+  display:none;
+  margin-left:12px;
+  width:40px;
+  height:40px;
+  border-radius:12px;
+  background:#1a1c25;
+  border:1px solid var(--line);
+  place-content:center;
+  cursor:pointer;
+}
+.burger span,.burger::before,.burger::after{
+  content:"";
+  display:block;
+  height:2px;
+  width:18px;
+  background:#cfd2da;
+  border-radius:2px;
+  margin:4px auto;
+}
+
+/* ===== HERO ===== */
+.hero{
+  position:relative;
+  padding-top:96px;
+  min-height:calc(100svh - 64px);
+  display:grid;
+  place-items:center;
+  text-align:center;
+  overflow:hidden;
+}
+.kicker{
+  font-weight:700;
+  letter-spacing:.2px;
+  font-size:clamp(18px,3.2vw,24px);
+}
+.title{
+  font-family:"Space Grotesk",sans-serif;
+  font-weight:700;
+  font-size:clamp(34px,10vw,96px);
+  line-height:1.05;
+  margin:16px 0 0;
+}
+.title .grad{
+  background:linear-gradient(90deg,var(--accent) 0%,#b9a2ff 40%,var(--accent-2) 100%);
+  -webkit-background-clip:text;
+  background-clip:text;
+  color:transparent;
+}
+.title .underline{
+  box-shadow:inset 0 -14px 0 color-mix(in oklab,var(--accent) 24%,transparent);
+  border-radius:8px;
+  padding:0 .2rem;
+}
+
+/* Scroll cue */
+.scroll-cue{
+  position:absolute;
+  bottom:28px;
+  left:50%;
+  transform:translateX(-50%);
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:6px;
+  color:#cfd3dd;
+  opacity:.55;
+  font-size:12px;
+  letter-spacing:.18em;
+  text-transform:uppercase;
+}
+.scroll-cue i{
+  width:18px;
+  height:26px;
+  border:1.8px solid #2e3142;
+  border-radius:10px;
+  position:relative;
+}
+.scroll-cue i::after{
+  content:"";
+  position:absolute;
+  left:50%;
+  top:6px;
+  transform:translateX(-50%);
+  width:2px;
+  height:6px;
+  background:#cfd3dd;
+  border-radius:2px;
+  opacity:.9;
+  animation:wheel 1.9s ease-in-out infinite;
+}
+@keyframes wheel{
+  0%{transform:translate(-50%,0)}
+  50%{transform:translate(-50%,6px)}
+  100%{transform:translate(-50%,0)}
+}
+
+/* ===== SECCIONES ===== */
+.section{
+  padding:88px 0;
+  border-top:1px solid var(--line);
+}
+.section h2{
+  font-family:"Space Grotesk",sans-serif;
+  font-weight:700;
+  letter-spacing:-.3px;
+  font-size:clamp(26px,4.2vw,44px);
+  margin:0 0 10px;
+}
+.section p.lead{
+  color:var(--muted);
+  margin:0 0 26px;
+}
+
+/* Servicios */
+.service-pills{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:14px}
+.pill{
+  font-size:12px;
+  text-transform:uppercase;
+  font-weight:700;
+  border:1px solid #2b2f45;
+  color:#d5d8e6;
+  background:#101422;
+  padding:8px 10px;
+  border-radius:999px;
+}
+.services-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:16px;
+}
+.service-card{
+  border:1px solid #2a2e44;
+  background:linear-gradient(180deg,rgba(255,255,255,.02),transparent 40%),linear-gradient(180deg,#10131c,#0f121a);
+  border-radius:18px;
+  padding:18px;
+  transition:transform .2s,border-color .25s;
+}
+.service-card:hover{transform:translateY(-4px);border-color:#3a3f5a}
+.s-icon{
+  width:28px;
+  height:28px;
+  border-radius:8px;
+  background:linear-gradient(135deg,var(--accent),var(--accent-2));
+  display:grid;
+  place-items:center;
+  font-size:14px;
+  font-weight:800;
+  color:#101113;
+  font-family:"Space Grotesk",sans-serif;
+}
+.s-title{margin:10px 0 6px;font-weight:700;font-family:"Space Grotesk",sans-serif}
+.s-copy{color:#cfd2df;font-size:14px}
+.s-meta{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}
+.s-tag{font-size:12px;border:1px solid #2a2e44;padding:4px 8px;border-radius:999px;color:#d7d9e6}
+
+/* ===== SOBRE MÍ ===== */
+.about-section{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:24px;
+}
+.about-intro{grid-column:1 / -1}
+.about-grid{
+  grid-column:1 / -1;
+  display:grid;
+  grid-template-columns:minmax(0,1fr) minmax(0,1fr);
+  grid-auto-rows:1fr;
+  gap:12px 24px;
+  align-items:stretch;
+  margin-top:12px;
+}
+.value,.t-item{
+  display:flex;
+  flex-direction:column;
+  height:auto;
+}
+.value{
+  gap:10px;
+  align-items:flex-start;
+  border:1px dashed #2b2f45;
+  border-radius:14px;
+  padding:12px;
+  background:#0f131f;
+}
+.value .dot{
+  width:8px;
+  height:8px;
+  border-radius:999px;
+  background:var(--accent);
+  margin-top:6px;
+}
+.t-item{
+  border:1px solid #2a2e44;
+  border-radius:16px;
+  padding:14px;
+  background:linear-gradient(180deg,#0f121a,#0e1118);
+}
+.t-head{
+  display:flex;
+  align-items:center;
+  gap:8px;
+  font-weight:700;
+  font-family:"Space Grotesk",sans-serif;
+}
+.t-badge{
+  font-size:12px;
+  border:1px solid #2a2e44;
+  padding:4px 8px;
+  border-radius:999px;
+  color:#d7d9e6;
+  margin-left:auto;
+}
+.value div,
+.t-copy{
+  word-break:break-word;
+}
+
+/* STACK RAIL */
+.stack-rail{
+  grid-column:1 / -1;
+  margin-top:18px;
+  border-top:1px solid var(--line);
+  border-bottom:1px solid var(--line);
+  padding:18px 0;
+  background:#0e1117;
+}
+.rail{position:relative;overflow:hidden;mask-image:linear-gradient(90deg,transparent 0,#000 7%,#000 93%,transparent 100%)}
+.rail-track{
+  display:flex;
+  gap:28px;
+  align-items:center;
+  white-space:nowrap;
+  animation:rail-move 28s linear infinite;
+}
+.rail:hover .rail-track{animation-play-state:paused}
+@keyframes rail-move{to{transform:translateX(-50%)}}
+.tech{
+  position:relative;
+  display:inline-block;
+  font-family:"Space Grotesk",sans-serif;
+  font-weight:700;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  font-size:clamp(14px,1.8vw,16px);
+  color:#e6e8f1;
+}
+.tech::after{
+  content:"";
+  position:absolute;
+  left:0;right:0;
+  bottom:-6px;
+  height:2px;
+  background:linear-gradient(90deg,var(--accent),var(--accent-2));
+  transform:scaleX(0);
+  transform-origin:left;
+  transition:transform .35s ease;
+}
+.tech:hover::after{transform:scaleX(1)}
+.sep{opacity:.5}
+
+/* PROYECTOS */
+.grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:18px;
+}
+.card{
+  border:1px solid var(--line);
+  background:#12141f;
+  border-radius:18px;
+  overflow:hidden;
+  transition:transform .18s,border-color .25s,background .25s;
+}
+.card:hover{transform:translateY(-4px);border-color:#2f3344;background:#131623}
+.thumb{aspect-ratio:16/10;background:#0f1117}
+.thumb img{width:100%;height:100%;object-fit:cover}
+.card-body{padding:14px 14px 16px}
+.card-title{font-weight:700;letter-spacing:.2px;font-family:"Space Grotesk",sans-serif}
+.tag{
+  font-size:12px;
+  color:#cfd1d8;
+  border:1px solid #2a2d3a;
+  padding:4px 8px;
+  border-radius:999px;
+  display:inline-block;
+  margin-top:8px;
+}
+.card-meta{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  color:var(--muted);
+  font-size:13px;
+  margin-top:10px;
+}
+.card a.more{font-weight:700;text-decoration:underline;cursor:pointer}
+
+/* CONTACTO */
+.contact-wrap{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:24px;
+  align-items:start;
+}
+.socials{display:flex;gap:10px;flex-wrap:wrap}
+.socials a{
+  border:1px solid var(--line);
+  padding:10px 12px;
+  border-radius:12px;
+  background:#131624;
+  color:#dfe2ea;
+}
+.footer{
+  padding:34px 0 60px;
+  border-top:1px solid var(--line);
+  color:#cdd0d8;
+}
+.small{color:#9aa0ad;font-size:13px}
+
+/* ===== MODAL VER CASO ===== */
+.modal-backdrop{
+  position:fixed;
+  inset:0;
+  background:rgba(3,4,10,.78);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  z-index:80;
+  opacity:0;
+  pointer-events:none;
+  transition:opacity .25s ease;
+}
+.modal-backdrop.open{
+  opacity:1;
+  pointer-events:auto;
+}
+.modal{
+  position:relative;
+  width:90%;
+  max-width:380px;
+  border-radius:20px;
+  border:1px solid #2a2e44;
+  background:linear-gradient(180deg,#10131c,#0c0f17);
+  box-shadow:var(--shadow);
+  padding:20px 18px 18px;
+}
+.modal-title{
+  font-family:"Space Grotesk",sans-serif;
+  font-weight:700;
+  font-size:18px;
+  margin-bottom:6px;
+}
+.modal-text{
+  font-size:14px;
+  color:var(--muted);
+  margin:0 0 14px;
+}
+.modal-actions{
+  display:flex;
+  flex-wrap:wrap;
+  gap:8px;
+}
+.modal-btn{
+  flex:1 1 auto;
+  border-radius:999px;
+  padding:10px 12px;
+  border:1px solid #2a2e44;
+  background:#131624;
+  color:#e6e8f1;
+  font-size:14px;
+  cursor:pointer;
+}
+.modal-btn.primary{
+  background:linear-gradient(135deg,var(--accent),var(--accent-2));
+  color:#101113;
+  border-color:#2a2c36;
+}
+.modal-close{
+  position:absolute;
+  top:8px;
+  right:8px;
+  width:26px;
+  height:26px;
+  border-radius:999px;
+  border:1px solid #2a2e44;
+  background:#151827;
+  color:#d4d6e2;
+  font-size:16px;
+  line-height:1;
+  cursor:pointer;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (min-width:1080px){
+  .about-grid{grid-auto-rows:1fr}
+}
+
+@media (max-width:1080px){
+  .about-section,.contact-wrap{grid-template-columns:1fr}
+}
+
+/* MOBILE NAV + SOBRE MÍ STACK */
+@media (max-width:860px){
+  .burger{display:grid}
+
+  /* OFF-CANVAS MENU */
+  .nav{
+    position:fixed;
+    top:64px;
+    right:0;
+    bottom:0;
+    left:0;
+    background:#05060a;
+    flex-direction:column;
+    align-items:flex-start;
+    padding:24px 24px 40px;
+    gap:12px;
+    transform:translateX(100%);
+    opacity:0;
+    pointer-events:none;
+    transition:transform .28s ease, opacity .2s ease;
+    z-index:60;
+  }
+  .nav a{
+    width:100%;
+    font-size:16px;
+  }
+  .nav.open{
+    transform:translateX(0);
+    opacity:1;
+    pointer-events:auto;
+  }
+
+  /* SOBRE MÍ */
+  .about-grid{
+    display:flex;
+    flex-direction:column;
+    gap:12px;
+  }
+  .about-grid .value{order:1;}
+  .about-grid .t-item{order:2;}
+
+  .value,.t-item{
+    width:100%;
+    max-width:100%;
+  }
+
+  .grid,.services-grid{grid-template-columns:1fr 1fr}
+  .section{padding:72px 0;}
+  .brand span:last-child{font-size:14px;}
+}
+
+@media (max-width:560px){
+  .grid,.services-grid{grid-template-columns:1fr}
+  .title{letter-spacing:.3px}
+  .container{padding:0 16px;}
+}
+</style>
+</head>
+<body>
+
+<header class="header">
+  <div class="header-inner">
+    <div class="brand"><span class="brand-mark"></span><span>Aixa · Portafolio</span></div>
+    <nav class="nav" id="nav">
+      <a href="#proyectos">Proyectos</a>
+      <a href="#servicios">Servicios</a>
+      <a href="#sobre-mi">Sobre mí</a>
+      <a href="#contacto" class="cta">Contacto</a>
+    </nav>
+    <button class="burger" id="burger" aria-label="Abrir menú" aria-expanded="false">
+      <span></span>
+    </button>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="container">
+    <div style="max-width:980px;margin:0 auto">
+      <div class="kicker">Web Designer • Full–Stack • Graphic Designer</div>
+      <h1 class="title">Diseño y código que <span class="underline"><span class="grad">convierten</span></span> visitas en resultados.</h1>
+    </div>
+  </div>
+  <div class="scroll-cue" aria-hidden="true">
+    <span>scroll</span>
+    <i></i>
+  </div>
+</section>
+
+<!-- SERVICIOS -->
+<section class="section" id="servicios">
+  <div class="container">
+    <div class="service-pills">
+      <span class="pill">Resultados</span>
+      <span class="pill">Rápida Iteración</span>
+      <span class="pill">Calidad Visual</span>
+      <span class="pill">Accesibilidad</span>
+      <span class="pill">Performance</span>
+    </div>
+    <h2>Servicios centrados en resultados</h2>
+    <p class="lead">Lo esencial: claridad, velocidad y conversión. Diseño y desarrollo con estética premium y foco en negocio.</p>
+    <div class="services-grid">
+      <article class="service-card">
+        <div class="s-icon">UX</div>
+        <div class="s-title">Diseño Web & UI/UX</div>
+        <p class="s-copy">Wireframes, sistemas de diseño, prototipos en Figma, usabilidad y accesibilidad.</p>
+        <div class="s-meta">
+          <span class="s-tag">Research</span>
+          <span class="s-tag">Design System</span>
+          <span class="s-tag">Prototyping</span>
+        </div>
+      </article>
+      <article class="service-card">
+        <div class="s-icon">DEV</div>
+        <div class="s-title">Desarrollo Full-Stack</div>
+        <p class="s-copy">Front-end (React/Next) y Back-end (.NET/Node). APIs, BD y CI/CD.</p>
+        <div class="s-meta">
+          <span class="s-tag">React/Next</span>
+          <span class="s-tag">.NET/API</span>
+          <span class="s-tag">CI/CD</span>
+        </div>
+      </article>
+      <article class="service-card">
+        <div class="s-icon">BR</div>
+        <div class="s-title">Branding & Diseño Gráfico</div>
+        <p class="s-copy">Identidad visual, guías de marca y piezas para campañas y social media.</p>
+        <div class="s-meta">
+          <span class="s-tag">Identidad</span>
+          <span class="s-tag">Editorial</span>
+          <span class="s-tag">Social</span>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- SOBRE MÍ -->
+<section class="section" id="sobre-mi">
+  <div class="container about-section">
+    <div class="about-intro">
+      <h2>Sobre mí</h2>
+      <p class="lead">Diseñadora y desarrolladora full-stack. Estética moderna + performance real. Trabajo con marcas que buscan claridad y carácter.</p>
+    </div>
+
+    <div class="about-grid">
+      <div class="value">
+        <span class="dot"></span>
+        <div><strong>Claridad primero.</strong><br>Mensajes simples, jerarquía visual y foco en la conversión.</div>
+      </div>
+      <div class="t-item">
+        <div class="t-head">Proceso <span class="t-badge">Etapas</span></div>
+        <div class="t-copy">Descubrimiento → Propuesta → Diseño → Desarrollo → Entrega y métricas.</div>
+      </div>
+
+      <div class="value">
+        <span class="dot"></span>
+        <div><strong>Iteración rápida.</strong><br>Prototipo temprano, medición continua y mejoras semanales.</div>
+      </div>
+      <div class="t-item">
+        <div class="t-head">Entrega <span class="t-badge">Semanas</span></div>
+        <div class="t-copy">Sprints de 1–2 semanas con demos y handoff documentado.</div>
+      </div>
+
+      <div class="value">
+        <span class="dot"></span>
+        <div><strong>Detalle y consistencia.</strong><br>Sistemas de diseño, componentes reutilizables y accesibilidad.</div>
+      </div>
+      <div class="t-item">
+        <div class="t-head">Mantenimiento <span class="t-badge">Opcional</span></div>
+        <div class="t-copy">Planes mensuales para evolución de producto y performance.</div>
+      </div>
+    </div>
+
+    <div class="stack-rail" aria-label="Stack principal">
+      <div class="rail">
+        <div class="rail-track">
+          <span class="tech">HTML5</span><span class="sep">•</span>
+          <span class="tech">CSS3</span><span class="sep">•</span>
+          <span class="tech">JavaScript</span><span class="sep">•</span>
+          <span class="tech">TypeScript</span><span class="sep">•</span>
+          <span class="tech">React</span><span class="sep">•</span>
+          <span class="tech">Next.js</span><span class="sep">•</span>
+          <span class="tech">Node.js</span><span class="sep">•</span>
+          <span class="tech">.NET / C#</span><span class="sep">•</span>
+          <span class="tech">SQL</span><span class="sep">•</span>
+          <span class="tech">Azure</span><span class="sep">•</span>
+          <span class="tech">Git</span><span class="sep">•</span>
+          <span class="tech">Figma</span>
+          <!-- duplicado -->
+          <span class="tech">HTML5</span><span class="sep">•</span>
+          <span class="tech">CSS3</span><span class="sep">•</span>
+          <span class="tech">JavaScript</span><span class="sep">•</span>
+          <span class="tech">TypeScript</span><span class="sep">•</span>
+          <span class="tech">React</span><span class="sep">•</span>
+          <span class="tech">Next.js</span><span class="sep">•</span>
+          <span class="tech">Node.js</span><span class="sep">•</span>
+          <span class="tech">.NET / C#</span><span class="sep">•</span>
+          <span class="tech">SQL</span><span class="sep">•</span>
+          <span class="tech">Azure</span><span class="sep">•</span>
+          <span class="tech">Git</span><span class="sep">•</span>
+          <span class="tech">Figma</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROYECTOS -->
+<section class="section" id="proyectos">
+  <div class="container">
+    <h2>Proyectos Web</h2>
+    <p class="lead">Desarrollo de webs.</p>
+    <div class="grid">
+      <article class="card">
+        <div class="thumb"><img src="./assets/bayahibe-investment.png" alt="Bayahibe Investment"></div>
+        <div class="card-body">
+          <div class="card-title">Bayahibe Investment</div>
+          <span class="tag">Landing page</span>
+          <div class="card-meta"><span>2025</span><a class="more" href="https://bayahibe-investment.netlify.app/">Ver →</a></div>
+        </div>
+      </article>
+      <article class="card">
+        <div class="thumb"><img src="./assets/inferno.png" alt="Inferno Clothing Shop"></div>
+        <div class="card-body">
+          <div class="card-title">Inferno Clothing Shop</div>
+          <span class="tag">Shop web</span>
+          <div class="card-meta"><span>2025</span><a class="more" href="https://infernodr.netlify.app/">Ver →</a></div>
+        </div>
+      </article>
+      <article class="card">
+        <div class="thumb"><img src="./assets/hollow.jpg" alt="Hollow Cabin Hotel"></div>
+        <div class="card-body">
+          <div class="card-title">Hollow Cabin Hotel</div>
+          <span class="tag">Hotel Web</span>
+          <div class="card-meta"><span>2025</span><a class="more" href="https://hollowcabins.netlify.app/">Ver →</a></div>
+        </div>
+      </article>
+    </div>
+
+    <h2 style="margin-top:44px">Proyectos de Diseño Web</h2>
+    <p class="lead">Interfaces elegantes y claras, listas para convertir.</p>
+    <div class="grid">
+      <article class="card">
+        <div class="thumb"><img src="./assets/rapigoo.png" alt="App Delivery Design"></div>
+        <div class="card-body">
+          <div class="card-title">App Delivery Design</div>
+          <span class="tag">UI/UX • Figma</span>
+          <div class="card-meta"><span>2025</span><a class="more case-link" href="#" data-pdf-es="./assets/delivery-design-spanish.pdf" data-pdf-en="./assets/delivery-design.pdf">Ver caso →</a></div>
+        </div>
+      </article>
+      <article class="card">
+        <div class="thumb"><img src="./assets/QR.png" alt="QR Intelligent web"></div>
+        <div class="card-body">
+          <div class="card-title">QR Intelligent web</div>
+          <span class="tag">Web system</span>
+          <div class="card-meta"><span>2024</span><a class="more case-link" href="#" data-pdf-es="./assets/qr-design-spanish.pdf" data-pdf-en="./assets/qr-design.pdf">Ver caso →</a></div>
+        </div>
+      </article>
+      <article class="card">
+        <div class="thumb"><img src="./assets/hollow.jpg" alt="Hollow Web Design"></div>
+        <div class="card-body">
+          <div class="card-title">Hollow Web Design</div>
+          <span class="tag">Research • Prototipos</span>
+          <div class="card-meta"><span>2024</span><a class="more case-link" href="#" data-pdf-es="./assets/hollow-design.pdf" data-pdf-en="./assets/hollow-design.pdf">Ver caso →</a></div>
+        </div>
+      </article>
+    </div>
+
+
+
+    <h2 style="margin-top:44px">Proyectos de Diseño Gráfico</h2>
+    <p class="lead">Identidad visual y piezas con carácter.</p>
+    <div class="grid">
+      <article class="card">
+        <div class="thumb"><img src="./assets/astro.png" alt="Frost Logo"></div>
+        <div class="card-body">
+          <div class="card-title">Astro Logo 3D</div>
+          <span class="tag">Logo</span>
+          <div class="card-meta"><span>2024</span><a class="more case-link" href="#" data-pdf-es="./assets/astro-logo-spanish.pdf" data-pdf-en="./assets/astro-logo.pdf">Ver caso →</a></div>
+        </div>
+      </article>
+      <article class="card">
+        <div class="thumb"><img src="./assets/bayahibe.png" alt="Bayahibe Investment Branding"></div>
+        <div class="card-body">
+          <div class="card-title">Bayahibe Investment Branding</div>
+          <span class="tag">Rebranding</span>
+          <div class="card-meta"><span>2024</span><a class="more case-link" href="#" data-pdf-es="./assets/bayahibe-investment.pdf" data-pdf-en="./assets/bayahibe-investment.pdf">Ver caso →</a></div>
+        </div>
+      </article>
+      <article class="card">
+        <div class="thumb"><img src="./assets/tuscany.png" alt="Tuscany Branding"></div>
+        <div class="card-body">
+          <div class="card-title">Tuscany Branding</div>
+          <span class="tag">Branding</span>
+          <div class="card-meta"><span>2023</span><a class="more case-link" href="#" data-pdf-es="./assets/tuscany.pdf" data-pdf-en="./assets/tuscany.pdf">Ver caso →</a></div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACTO -->
+<section class="section" id="contacto">
+  <div class="container contact-wrap">
+    <div>
+      <h2>Hablemos de tu proyecto</h2>
+      <p class="lead">Cuéntame tu objetivo y te propongo una ruta clara con plazos y entregables. Respondo en 24h.</p>
+    </div>
+    <form onsubmit="event.preventDefault();alert('¡Gracias! Me pondré en contacto contigo.');" style="border:1px solid var(--line);background:#10131b;border-radius:16px;padding:16px">
+      <div style="display:grid;gap:10px">
+        <label>Nombre<br><input required type="text" placeholder="Aixa" style="width:100%;padding:12px;border-radius:12px;background:#141726;border:1px solid #272a39;color:#e9ebf2"></label>
+        <label>Email<br><input required type="email" placeholder="aixaoehlenschlager@gmail.com" style="width:100%;padding:12px;border-radius:12px;background:#141726;border:1px solid #272a39;color:#e9ebf2"></label>
+        <label>Mensaje<br><textarea required rows="4" placeholder="Cuéntame brevemente tu idea" style="width:100%;padding:12px;border-radius:12px;background:#141726;border:1px solid #272a39;color:#e9ebf2"></textarea></label>
+      </div>
+      <div style="display:flex;gap:8px;margin-top:10px">
+        <button class="cta" type="submit">Enviar</button>
+        <button type="reset" style="border:1px solid var(--line);padding:10px 12px;border-radius:12px;background:#131624;color:#dfe2ea">Limpiar</button>
+      </div>
+    </form>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container" style="display:flex;flex-wrap:wrap;align-items:center;gap:14px;justify-content:space-between">
+    <div>© 2025 · Aixa</div><div class="small">Hecho con cariño + foco en conversión.</div>
+  </div>
+</footer>
+
+<!-- MODAL PARA VER CASO -->
+<div class="modal-backdrop" id="case-modal" aria-hidden="true">
+  <div class="modal">
+    <button type="button" class="modal-close" id="modal-close" aria-label="Cerrar">×</button>
+    <div class="modal-title">Descargar caso de estudio</div>
+    <p class="modal-text">
+      Se descargará un PDF con el diseño completo y la presentación del proyecto. 
+      Elige el idioma en el que prefieres recibir el archivo.
+    </p>
+    <div class="modal-actions">
+      <button type="button" class="modal-btn primary" id="download-es">Descargar en español</button>
+      <button type="button" class="modal-btn" id="download-en">Descargar en inglés</button>
+    </div>
+  </div>
+</div>
+
+<script>
+const burger = document.getElementById('burger');
+const nav = document.getElementById('nav');
+let open = false;
+
+burger?.addEventListener('click', () => {
+  open = !open;
+  nav.classList.toggle('open', open);
+  burger.setAttribute('aria-expanded', open ? 'true' : 'false');
+});
+
+nav.querySelectorAll('a').forEach(link => {
+  link.addEventListener('click', () => {
+    if (window.innerWidth <= 860 && open) {
+      open = false;
+      nav.classList.remove('open');
+      burger.setAttribute('aria-expanded', 'false');
+    }
+  });
+});
+
+/* ===== MODAL VER CASO ===== */
+const caseModal = document.getElementById('case-modal');
+const closeModalBtn = document.getElementById('modal-close');
+const downloadEsBtn = document.getElementById('download-es');
+const downloadEnBtn = document.getElementById('download-en');
+
+let activeCase = { es: null, en: null };
+
+document.querySelectorAll('.case-link').forEach(link => {
+  link.addEventListener('click', (e) => {
+    e.preventDefault();
+    activeCase.es = link.dataset.pdfEs || '';
+    activeCase.en = link.dataset.pdfEn || '';
+    caseModal.classList.add('open');
+    caseModal.setAttribute('aria-hidden', 'false');
+  });
+});
+
+function closeModal() {
+  caseModal.classList.remove('open');
+  caseModal.setAttribute('aria-hidden', 'true');
+}
+
+closeModalBtn.addEventListener('click', closeModal);
+
+caseModal.addEventListener('click', (e) => {
+  if (e.target === caseModal) {
+    closeModal();
+  }
+});
+
+downloadEsBtn.addEventListener('click', () => {
+  if (activeCase.es) {
+    window.open(activeCase.es, '_blank');
+  } else {
+    alert('Configura la ruta del PDF en español en el atributo data-pdf-es de este proyecto.');
+  }
+});
+
+downloadEnBtn.addEventListener('click', () => {
+  if (activeCase.en) {
+    window.open(activeCase.en, '_blank');
+  } else {
+    alert('Configura la ruta del PDF en inglés en el atributo data-pdf-en de este proyecto.');
+  }
+});
+</script>
+</body>
+</html>
