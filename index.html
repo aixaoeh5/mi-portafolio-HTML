@@ -1,301 +1,522 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Portafolio — Web Designer • Full-Stack • Graphic Designer</title>
-<link 
-  href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;700&display=swap" 
-  rel="stylesheet"
->
-<link rel="stylesheet" href="css/styles.css" />
-</head>
-<body>
-
-<header class="header">
-  <div class="header-inner">
-    <div class="brand"><span class="brand-mark"></span><span>Aixa · Portafolio</span></div>
-    <nav class="nav" id="nav">
-      <a href="#proyectos">Proyectos</a>
-      <a href="#servicios">Servicios</a>
-      <a href="#sobre-mi">Sobre mí</a>
-      <a href="#contacto" class="cta">Contacto</a>
-    </nav>
-    <button class="burger" id="burger" aria-label="Abrir menú" aria-expanded="false">
-      <span></span>
-    </button>
-  </div>
-</header>
-
-<!-- HERO -->
-<section class="hero" id="home">
-  <div class="container">
-    <div style="max-width:980px;margin:0 auto">
-      <div class="kicker">Web Designer • Full–Stack • Graphic Designer</div>
-      <h1 class="title">Diseño y código que <span class="underline"><span class="grad">convierten</span></span> visitas en resultados.</h1>
-    </div>
-  </div>
-  <div class="scroll-cue" aria-hidden="true">
-    <span>scroll</span>
-    <i></i>
-  </div>
-</section>
-
-<!-- SERVICIOS -->
-<section class="section" id="servicios">
-  <div class="container">
-    <div class="service-pills">
-      <span class="pill">Resultados</span>
-      <span class="pill">Rápida Iteración</span>
-      <span class="pill">Calidad Visual</span>
-      <span class="pill">Accesibilidad</span>
-      <span class="pill">Performance</span>
-    </div>
-    <h2>Servicios centrados en resultados</h2>
-    <p class="lead">Lo esencial: claridad, velocidad y conversión. Diseño y desarrollo con estética premium y foco en negocio.</p>
-    <div class="services-grid">
-      <article class="service-card">
-        <div class="s-icon">UX</div>
-        <div class="s-title">Diseño Web & UI/UX</div>
-        <p class="s-copy">Wireframes, sistemas de diseño, prototipos en Figma, usabilidad y accesibilidad.</p>
-        <div class="s-meta">
-          <span class="s-tag">Research</span>
-          <span class="s-tag">Design System</span>
-          <span class="s-tag">Prototyping</span>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Portafolio — Web Designer • Full-Stack • Graphic Designer</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <header class="header">
+      <div class="header-inner">
+        <div class="brand">
+          <span class="brand-mark"></span><span>Aixa · Portafolio</span>
         </div>
-      </article>
-      <article class="service-card">
-        <div class="s-icon">DEV</div>
-        <div class="s-title">Desarrollo Full-Stack</div>
-        <p class="s-copy">Front-end (React/Next) y Back-end (.NET/Node). APIs, BD y CI/CD.</p>
-        <div class="s-meta">
-          <span class="s-tag">React/Next</span>
-          <span class="s-tag">.NET/API</span>
-          <span class="s-tag">CI/CD</span>
-        </div>
-      </article>
-      <article class="service-card">
-        <div class="s-icon">BR</div>
-        <div class="s-title">Branding & Diseño Gráfico</div>
-        <p class="s-copy">Identidad visual, guías de marca y piezas para campañas y social media.</p>
-        <div class="s-meta">
-          <span class="s-tag">Identidad</span>
-          <span class="s-tag">Editorial</span>
-          <span class="s-tag">Social</span>
-        </div>
-      </article>
-    </div>
-  </div>
-</section>
+        <nav class="nav" id="nav">
+          <a href="#proyectos">Proyectos</a>
+          <a href="#servicios">Servicios</a>
+          <a href="#sobre-mi">Sobre mí</a>
+          <a href="#contacto">Contacto</a>
+        </nav>
+        <button
+          class="burger"
+          id="burger"
+          aria-label="Abrir menú"
+          aria-expanded="false"
+        >
+          <span></span>
+        </button>
+      </div>
+    </header>
 
-<!-- SOBRE MÍ -->
-<section class="section" id="sobre-mi">
-  <div class="container about-section">
-    <div class="about-intro">
-      <h2>Sobre mí</h2>
-      <p class="lead">Diseñadora y desarrolladora full-stack. Estética moderna + performance real. Trabajo con marcas que buscan claridad y carácter.</p>
-    </div>
-
-    <div class="about-grid">
-      <div class="value">
-        <span class="dot"></span>
-        <div><strong>Claridad primero.</strong><br>Mensajes simples, jerarquía visual y foco en la conversión.</div>
-      </div>
-      <div class="t-item">
-        <div class="t-head">Proceso <span class="t-badge">Etapas</span></div>
-        <div class="t-copy">Descubrimiento → Propuesta → Diseño → Desarrollo → Entrega y métricas.</div>
-      </div>
-
-      <div class="value">
-        <span class="dot"></span>
-        <div><strong>Iteración rápida.</strong><br>Prototipo temprano, medición continua y mejoras semanales.</div>
-      </div>
-      <div class="t-item">
-        <div class="t-head">Entrega <span class="t-badge">Semanas</span></div>
-        <div class="t-copy">Sprints de 1–2 semanas con demos y handoff documentado.</div>
-      </div>
-
-      <div class="value">
-        <span class="dot"></span>
-        <div><strong>Detalle y consistencia.</strong><br>Sistemas de diseño, componentes reutilizables y accesibilidad.</div>
-      </div>
-      <div class="t-item">
-        <div class="t-head">Mantenimiento <span class="t-badge">Opcional</span></div>
-        <div class="t-copy">Planes mensuales para evolución de producto y performance.</div>
-      </div>
-    </div>
-
-    <div class="stack-rail" aria-label="Stack principal">
-      <div class="rail">
-        <div class="rail-track">
-          <span class="tech">HTML5</span><span class="sep">•</span>
-          <span class="tech">CSS3</span><span class="sep">•</span>
-          <span class="tech">JavaScript</span><span class="sep">•</span>
-          <span class="tech">TypeScript</span><span class="sep">•</span>
-          <span class="tech">React</span><span class="sep">•</span>
-          <span class="tech">Next.js</span><span class="sep">•</span>
-          <span class="tech">Node.js</span><span class="sep">•</span>
-          <span class="tech">.NET / C#</span><span class="sep">•</span>
-          <span class="tech">SQL</span><span class="sep">•</span>
-          <span class="tech">Azure</span><span class="sep">•</span>
-          <span class="tech">Git</span><span class="sep">•</span>
-          <span class="tech">Figma</span>
-          <!-- duplicado -->
-          <span class="tech">HTML5</span><span class="sep">•</span>
-          <span class="tech">CSS3</span><span class="sep">•</span>
-          <span class="tech">JavaScript</span><span class="sep">•</span>
-          <span class="tech">TypeScript</span><span class="sep">•</span>
-          <span class="tech">React</span><span class="sep">•</span>
-          <span class="tech">Next.js</span><span class="sep">•</span>
-          <span class="tech">Node.js</span><span class="sep">•</span>
-          <span class="tech">.NET / C#</span><span class="sep">•</span>
-          <span class="tech">SQL</span><span class="sep">•</span>
-          <span class="tech">Azure</span><span class="sep">•</span>
-          <span class="tech">Git</span><span class="sep">•</span>
-          <span class="tech">Figma</span>
+    <!-- HERO -->
+    <section class="hero" id="home">
+      <div class="container">
+        <div style="max-width: 980px; margin: 0 auto">
+          <div class="kicker">Web Designer • Full–Stack • Graphic Designer</div>
+          <h1 class="title">
+            Diseño y código que
+            <span class="underline"><span class="grad">convierten</span></span>
+            visitas en resultados.
+          </h1>
         </div>
       </div>
-    </div>
-  </div>
-</section>
-
-<!-- PROYECTOS -->
-<section class="section" id="proyectos">
-  <div class="container">
-    <h2>Proyectos Web</h2>
-    <p class="lead">Desarrollo de webs.</p>
-    <div class="grid">
-      <article class="card">
-        <div class="thumb"><img src="./assets/bayahibe-investment.png" alt="Bayahibe Investment"></div>
-        <div class="card-body">
-          <div class="card-title">Bayahibe Investment</div>
-          <span class="tag">Landing page</span>
-          <div class="card-meta"><span>2025</span><a class="more" href="https://bayahibe-investment.netlify.app/">Ver →</a></div>
-        </div>
-      </article>
-      <article class="card">
-        <div class="thumb"><img src="./assets/inferno.png" alt="Inferno Clothing Shop"></div>
-        <div class="card-body">
-          <div class="card-title">Inferno Clothing Shop</div>
-          <span class="tag">Shop web</span>
-          <div class="card-meta"><span>2025</span><a class="more" href="https://infernodr.netlify.app/">Ver →</a></div>
-        </div>
-      </article>
-      <article class="card">
-        <div class="thumb"><img src="./assets/hollow.jpg" alt="Hollow Cabin Hotel"></div>
-        <div class="card-body">
-          <div class="card-title">Hollow Cabin Hotel</div>
-          <span class="tag">Hotel Web</span>
-          <div class="card-meta"><span>2025</span><a class="more" href="https://hollowcabins.netlify.app/">Ver →</a></div>
-        </div>
-      </article>
-    </div>
-
-    <h2 style="margin-top:44px">Proyectos de Diseño Web</h2>
-    <p class="lead">Interfaces elegantes y claras, listas para convertir.</p>
-    <div class="grid">
-      <article class="card">
-        <div class="thumb"><img src="./assets/rapigoo.png" alt="App Delivery Design"></div>
-        <div class="card-body">
-          <div class="card-title">App Delivery Design</div>
-          <span class="tag">UI/UX • Figma</span>
-          <div class="card-meta"><span>2025</span><a class="more case-link" href="#" data-pdf-es="./assets/delivery-design-spanish.pdf" data-pdf-en="./assets/delivery-design.pdf">Ver caso →</a></div>
-        </div>
-      </article>
-      <article class="card">
-        <div class="thumb"><img src="./assets/QR.png" alt="QR Intelligent web"></div>
-        <div class="card-body">
-          <div class="card-title">QR Intelligent web</div>
-          <span class="tag">Web system</span>
-          <div class="card-meta"><span>2024</span><a class="more case-link" href="#" data-pdf-es="./assets/qr-design-spanish.pdf" data-pdf-en="./assets/qr-design.pdf">Ver caso →</a></div>
-        </div>
-      </article>
-      <article class="card">
-        <div class="thumb"><img src="./assets/hollow.jpg" alt="Hollow Web Design"></div>
-        <div class="card-body">
-          <div class="card-title">Hollow Web Design</div>
-          <span class="tag">Research • Prototipos</span>
-          <div class="card-meta"><span>2024</span><a class="more case-link" href="#" data-pdf-es="./assets/hollow-design.pdf" data-pdf-en="./assets/hollow-design.pdf">Ver caso →</a></div>
-        </div>
-      </article>
-    </div>
-
-
-
-    <h2 style="margin-top:44px">Proyectos de Diseño Gráfico</h2>
-    <p class="lead">Identidad visual y piezas con carácter.</p>
-    <div class="grid">
-      <article class="card">
-        <div class="thumb"><img src="./assets/astro.png" alt="Frost Logo"></div>
-        <div class="card-body">
-          <div class="card-title">Astro Logo 3D</div>
-          <span class="tag">Logo</span>
-          <div class="card-meta"><span>2024</span><a class="more case-link" href="#" data-pdf-es="./assets/astro-logo-spanish.pdf" data-pdf-en="./assets/astro-logo.pdf">Ver caso →</a></div>
-        </div>
-      </article>
-      <article class="card">
-        <div class="thumb"><img src="./assets/bayahibe.png" alt="Bayahibe Investment Branding"></div>
-        <div class="card-body">
-          <div class="card-title">Bayahibe Investment Branding</div>
-          <span class="tag">Rebranding</span>
-          <div class="card-meta"><span>2024</span><a class="more case-link" href="#" data-pdf-es="./assets/bayahibe-investment.pdf" data-pdf-en="./assets/bayahibe-investment.pdf">Ver caso →</a></div>
-        </div>
-      </article>
-      <article class="card">
-        <div class="thumb"><img src="./assets/tuscany.png" alt="Tuscany Branding"></div>
-        <div class="card-body">
-          <div class="card-title">Tuscany Branding</div>
-          <span class="tag">Branding</span>
-          <div class="card-meta"><span>2023</span><a class="more case-link" href="#" data-pdf-es="./assets/tuscany.pdf" data-pdf-en="./assets/tuscany.pdf">Ver caso →</a></div>
-        </div>
-      </article>
-    </div>
-  </div>
-</section>
-
-<!-- CONTACTO -->
-<section class="section" id="contacto">
-  <div class="container contact-wrap">
-    <div>
-      <h2>Hablemos de tu proyecto</h2>
-      <p class="lead">Cuéntame tu objetivo y te propongo una ruta clara con plazos y entregables. Respondo en 24h.</p>
-    </div>
-    <form onsubmit="event.preventDefault();alert('¡Gracias! Me pondré en contacto contigo.');" style="border:1px solid var(--line);background:#10131b;border-radius:16px;padding:16px">
-      <div style="display:grid;gap:10px">
-        <label>Nombre<br><input required type="text" placeholder="Aixa" style="width:100%;padding:12px;border-radius:12px;background:#141726;border:1px solid #272a39;color:#e9ebf2"></label>
-        <label>Email<br><input required type="email" placeholder="aixaoehlenschlager@gmail.com" style="width:100%;padding:12px;border-radius:12px;background:#141726;border:1px solid #272a39;color:#e9ebf2"></label>
-        <label>Mensaje<br><textarea required rows="4" placeholder="Cuéntame brevemente tu idea" style="width:100%;padding:12px;border-radius:12px;background:#141726;border:1px solid #272a39;color:#e9ebf2"></textarea></label>
+      <div class="scroll-cue" aria-hidden="true">
+        <span>scroll</span>
+        <i></i>
       </div>
-      <div style="display:flex;gap:8px;margin-top:10px">
-        <button class="cta" type="submit">Enviar</button>
-        <button type="reset" style="border:1px solid var(--line);padding:10px 12px;border-radius:12px;background:#131624;color:#dfe2ea">Limpiar</button>
+    </section>
+
+    <!-- PROYECTOS -->
+    <section class="section" id="proyectos">
+      <div class="container">
+        <h2>Proyectos Web</h2>
+        <p class="lead">Desarrollo de webs.</p>
+        <div class="grid">
+          <article class="card">
+            <div class="thumb">
+              <img
+                src="./assets/bayahibe-investment.png"
+                alt="Bayahibe Investment"
+              />
+            </div>
+            <div class="card-body">
+              <div class="card-title">Bayahibe Investment</div>
+              <span class="tag">Landing page</span>
+              <div class="card-meta">
+                <span>2025</span
+                ><a class="more" href="https://bayahibe-investment.netlify.app/"
+                  >Ver →</a
+                >
+              </div>
+            </div>
+          </article>
+          <article class="card">
+            <div class="thumb">
+              <img src="./assets/inferno.png" alt="Inferno Clothing Shop" />
+            </div>
+            <div class="card-body">
+              <div class="card-title">Inferno Clothing Shop</div>
+              <span class="tag">Shop web</span>
+              <div class="card-meta">
+                <span>2025</span
+                ><a class="more" href="https://infernodr.netlify.app/">Ver →</a>
+              </div>
+            </div>
+          </article>
+          <article class="card">
+            <div class="thumb">
+              <img src="./assets/hollow.jpg" alt="Hollow Cabin Hotel" />
+            </div>
+            <div class="card-body">
+              <div class="card-title">Hollow Cabin Hotel</div>
+              <span class="tag">Hotel Web</span>
+              <div class="card-meta">
+                <span>2025</span
+                ><a class="more" href="https://hollowcabins.netlify.app/"
+                  >Ver →</a
+                >
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <h2 style="margin-top: 44px">Proyectos de Diseño Web</h2>
+        <p class="lead">
+          Interfaces elegantes y claras, listas para convertir.
+        </p>
+        <div class="grid">
+          <article class="card">
+            <div class="thumb">
+              <img src="./assets/rapigoo.png" alt="App Delivery Design" />
+            </div>
+            <div class="card-body">
+              <div class="card-title">App Delivery Design</div>
+              <span class="tag">UI/UX • Figma</span>
+              <div class="card-meta">
+                <span>2025</span
+                ><a
+                  class="more case-link"
+                  href="#"
+                  data-pdf-es="./assets/delivery-design-spanish.pdf"
+                  data-pdf-en="./assets/delivery-design.pdf"
+                  >Ver caso →</a
+                >
+              </div>
+            </div>
+          </article>
+          <article class="card">
+            <div class="thumb">
+              <img src="./assets/QR.png" alt="QR Intelligent web" />
+            </div>
+            <div class="card-body">
+              <div class="card-title">QR Intelligent web</div>
+              <span class="tag">Web system</span>
+              <div class="card-meta">
+                <span>2024</span
+                ><a
+                  class="more case-link"
+                  href="#"
+                  data-pdf-es="./assets/qr-design-spanish.pdf"
+                  data-pdf-en="./assets/qr-design.pdf"
+                  >Ver caso →</a
+                >
+              </div>
+            </div>
+          </article>
+          <article class="card">
+            <div class="thumb">
+              <img src="./assets/hollow.jpg" alt="Hollow Web Design" />
+            </div>
+            <div class="card-body">
+              <div class="card-title">Hollow Web Design</div>
+              <span class="tag">Research • Prototipos</span>
+              <div class="card-meta">
+                <span>2024</span
+                ><a
+                  class="more case-link"
+                  href="#"
+                  data-pdf-es="./assets/hollow-design.pdf"
+                  data-pdf-en="./assets/hollow-design.pdf"
+                  >Ver caso →</a
+                >
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <h2 style="margin-top: 44px">Proyectos de Diseño Gráfico</h2>
+        <p class="lead">Identidad visual y piezas con carácter.</p>
+        <div class="grid">
+          <article class="card">
+            <div class="thumb">
+              <img src="./assets/astro.png" alt="Frost Logo" />
+            </div>
+            <div class="card-body">
+              <div class="card-title">Astro Logo 3D</div>
+              <span class="tag">Logo</span>
+              <div class="card-meta">
+                <span>2024</span
+                ><a
+                  class="more case-link"
+                  href="#"
+                  data-pdf-es="./assets/astro-logo-spanish.pdf"
+                  data-pdf-en="./assets/astro-logo.pdf"
+                  >Ver caso →</a
+                >
+              </div>
+            </div>
+          </article>
+          <article class="card">
+            <div class="thumb">
+              <img
+                src="./assets/bayahibe.png"
+                alt="Bayahibe Investment Branding"
+              />
+            </div>
+            <div class="card-body">
+              <div class="card-title">Bayahibe Investment Branding</div>
+              <span class="tag">Rebranding</span>
+              <div class="card-meta">
+                <span>2024</span
+                ><a
+                  class="more case-link"
+                  href="#"
+                  data-pdf-es="./assets/bayahibe-investment.pdf"
+                  data-pdf-en="./assets/bayahibe-investment.pdf"
+                  >Ver caso →</a
+                >
+              </div>
+            </div>
+          </article>
+          <article class="card">
+            <div class="thumb">
+              <img src="./assets/tuscany.png" alt="Tuscany Branding" />
+            </div>
+            <div class="card-body">
+              <div class="card-title">Tuscany Branding</div>
+              <span class="tag">Branding</span>
+              <div class="card-meta">
+                <span>2023</span
+                ><a
+                  class="more case-link"
+                  href="#"
+                  data-pdf-es="./assets/tuscany.pdf"
+                  data-pdf-en="./assets/tuscany.pdf"
+                  >Ver caso →</a
+                >
+              </div>
+            </div>
+          </article>
+        </div>
       </div>
-    </form>
-  </div>
-</section>
+    </section>
 
-<footer class="footer">
-  <div class="container" style="display:flex;flex-wrap:wrap;align-items:center;gap:14px;justify-content:space-between">
-    <div>© 2025 · Aixa</div><div class="small">Hecho con cariño + foco en conversión.</div>
-  </div>
-</footer>
+    <!-- SERVICIOS -->
+    <section class="section" id="servicios">
+      <div class="container">
+        <div class="service-pills">
+          <span class="pill">Resultados</span>
+          <span class="pill">Rápida Iteración</span>
+          <span class="pill">Calidad Visual</span>
+          <span class="pill">Accesibilidad</span>
+          <span class="pill">Performance</span>
+        </div>
+        <h2>Servicios centrados en resultados</h2>
+        <p class="lead">
+          Lo esencial: claridad, velocidad y conversión. Diseño y desarrollo con
+          estética premium y foco en negocio.
+        </p>
+        <div class="services-grid">
+          <article class="service-card">
+            <div class="s-icon">UX</div>
+            <div class="s-title">Diseño Web & UI/UX</div>
+            <p class="s-copy">
+              Wireframes, sistemas de diseño, prototipos en Figma, usabilidad y
+              accesibilidad.
+            </p>
+            <div class="s-meta">
+              <span class="s-tag">Research</span>
+              <span class="s-tag">Design System</span>
+              <span class="s-tag">Prototyping</span>
+            </div>
+          </article>
+          <article class="service-card">
+            <div class="s-icon">DEV</div>
+            <div class="s-title">Desarrollo Full-Stack</div>
+            <p class="s-copy">
+              Front-end (React/Next) y Back-end (.NET/Node). APIs, BD y CI/CD.
+            </p>
+            <div class="s-meta">
+              <span class="s-tag">React/Next</span>
+              <span class="s-tag">.NET/API</span>
+              <span class="s-tag">CI/CD</span>
+            </div>
+          </article>
+          <article class="service-card">
+            <div class="s-icon">BR</div>
+            <div class="s-title">Branding & Diseño Gráfico</div>
+            <p class="s-copy">
+              Identidad visual, guías de marca y piezas para campañas y social
+              media.
+            </p>
+            <div class="s-meta">
+              <span class="s-tag">Identidad</span>
+              <span class="s-tag">Editorial</span>
+              <span class="s-tag">Social</span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
 
-<!-- MODAL PARA VER CASO -->
-<div class="modal-backdrop" id="case-modal" aria-hidden="true">
-  <div class="modal">
-    <button type="button" class="modal-close" id="modal-close" aria-label="Cerrar">×</button>
-    <div class="modal-title">Descargar caso de estudio</div>
-    <p class="modal-text">
-      Se descargará un PDF con el diseño completo y la presentación del proyecto. 
-      Elige el idioma en el que prefieres recibir el archivo.
-    </p>
-    <div class="modal-actions">
-      <button type="button" class="modal-btn primary" id="download-es">Descargar en español</button>
-      <button type="button" class="modal-btn" id="download-en">Descargar en inglés</button>
+    <!-- SOBRE MÍ -->
+    <section class="section" id="sobre-mi">
+      <div class="container about-section">
+        <div class="about-intro">
+          <h2>Sobre mí</h2>
+          <p class="lead">
+            Diseñadora y desarrolladora full-stack. Estética moderna +
+            performance real. Trabajo con marcas que buscan claridad y carácter.
+          </p>
+        </div>
+
+        <div class="about-grid">
+          <div class="value">
+            <span class="dot"></span>
+            <div>
+              <strong>Claridad primero.</strong><br />Mensajes simples,
+              jerarquía visual y foco en la conversión.
+            </div>
+          </div>
+          <div class="t-item">
+            <div class="t-head">
+              Proceso <span class="t-badge">Etapas</span>
+            </div>
+            <div class="t-copy">
+              Descubrimiento → Propuesta → Diseño → Desarrollo → Entrega y
+              métricas.
+            </div>
+          </div>
+
+          <div class="value">
+            <span class="dot"></span>
+            <div>
+              <strong>Iteración rápida.</strong><br />Prototipo temprano,
+              medición continua y mejoras semanales.
+            </div>
+          </div>
+          <div class="t-item">
+            <div class="t-head">
+              Entrega <span class="t-badge">Semanas</span>
+            </div>
+            <div class="t-copy">
+              Sprints de 1–2 semanas con demos y handoff documentado.
+            </div>
+          </div>
+
+          <div class="value">
+            <span class="dot"></span>
+            <div>
+              <strong>Detalle y consistencia.</strong><br />Sistemas de diseño,
+              componentes reutilizables y accesibilidad.
+            </div>
+          </div>
+          <div class="t-item">
+            <div class="t-head">
+              Mantenimiento <span class="t-badge">Opcional</span>
+            </div>
+            <div class="t-copy">
+              Planes mensuales para evolución de producto y performance.
+            </div>
+          </div>
+        </div>
+
+        <div class="stack-rail" aria-label="Stack principal">
+          <div class="rail">
+            <div class="rail-track">
+              <span class="tech">HTML5</span><span class="sep">•</span>
+              <span class="tech">CSS3</span><span class="sep">•</span>
+              <span class="tech">JavaScript</span><span class="sep">•</span>
+              <span class="tech">TypeScript</span><span class="sep">•</span>
+              <span class="tech">React</span><span class="sep">•</span>
+              <span class="tech">Next.js</span><span class="sep">•</span>
+              <span class="tech">Node.js</span><span class="sep">•</span>
+              <span class="tech">.NET / C#</span><span class="sep">•</span>
+              <span class="tech">SQL</span><span class="sep">•</span>
+              <span class="tech">Azure</span><span class="sep">•</span>
+              <span class="tech">Git</span><span class="sep">•</span>
+              <span class="tech">Figma</span>
+              <!-- duplicado -->
+              <span class="tech">HTML5</span><span class="sep">•</span>
+              <span class="tech">CSS3</span><span class="sep">•</span>
+              <span class="tech">JavaScript</span><span class="sep">•</span>
+              <span class="tech">TypeScript</span><span class="sep">•</span>
+              <span class="tech">React</span><span class="sep">•</span>
+              <span class="tech">Next.js</span><span class="sep">•</span>
+              <span class="tech">Node.js</span><span class="sep">•</span>
+              <span class="tech">.NET / C#</span><span class="sep">•</span>
+              <span class="tech">SQL</span><span class="sep">•</span>
+              <span class="tech">Azure</span><span class="sep">•</span>
+              <span class="tech">Git</span><span class="sep">•</span>
+              <span class="tech">Figma</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACTO -->
+    <section class="section" id="contacto">
+      <div class="container contact-wrap">
+        <div>
+          <h2>Hablemos de tu proyecto</h2>
+          <p class="lead">
+            Cuéntame tu objetivo y te propongo una ruta clara con plazos y
+            entregables. Respondo en 24h.
+          </p>
+        </div>
+        <form
+          onsubmit="event.preventDefault();alert('¡Gracias! Me pondré en contacto contigo.');"
+          style="
+            border: 1px solid var(--line);
+            background: #10131b;
+            border-radius: 16px;
+            padding: 16px;
+          "
+        >
+          <div style="display: grid; gap: 10px">
+            <label
+              >Nombre<br /><input
+                required
+                type="text"
+                placeholder="Aixa"
+                style="
+                  width: 100%;
+                  padding: 12px;
+                  border-radius: 12px;
+                  background: #141726;
+                  border: 1px solid #272a39;
+                  color: #e9ebf2;
+                "
+            /></label>
+            <label
+              >Email<br /><input
+                required
+                type="email"
+                placeholder="aixaoehlenschlager@gmail.com"
+                style="
+                  width: 100%;
+                  padding: 12px;
+                  border-radius: 12px;
+                  background: #141726;
+                  border: 1px solid #272a39;
+                  color: #e9ebf2;
+                "
+            /></label>
+            <label
+              >Mensaje<br /><textarea
+                required
+                rows="4"
+                placeholder="Cuéntame brevemente tu idea"
+                style="
+                  width: 100%;
+                  padding: 12px;
+                  border-radius: 12px;
+                  background: #141726;
+                  border: 1px solid #272a39;
+                  color: #e9ebf2;
+                "
+              ></textarea>
+            </label>
+          </div>
+          <div style="display: flex; gap: 8px; margin-top: 10px">
+            <button class="cta" type="submit">Enviar</button>
+            <button
+              type="reset"
+              style="
+                border: 1px solid var(--line);
+                padding: 10px 12px;
+                border-radius: 12px;
+                background: #131624;
+                color: #dfe2ea;
+              "
+            >
+              Limpiar
+            </button>
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div
+        class="container"
+        style="
+          display: flex;
+          flex-wrap: wrap;
+          align-items: center;
+          gap: 14px;
+          justify-content: space-between;
+        "
+      >
+        <div>© 2025 · Aixa</div>
+        <div class="small">Hecho con cariño + foco en conversión.</div>
+      </div>
+    </footer>
+
+    <!-- MODAL PARA VER CASO -->
+    <div class="modal-backdrop" id="case-modal" aria-hidden="true">
+      <div class="modal">
+        <button
+          type="button"
+          class="modal-close"
+          id="modal-close"
+          aria-label="Cerrar"
+        >
+          ×
+        </button>
+        <div class="modal-title">Descargar caso de estudio</div>
+        <p class="modal-text">
+          PDF con el diseño y la presentación completa del proyecto. Selecciona
+          un idioma para descargarlo.
+        </p>
+        <div class="modal-actions">
+          <button type="button" class="modal-btn primary" id="download-es">
+            Descargar en español
+          </button>
+          <button type="button" class="modal-btn" id="download-en">
+            Descargar en inglés
+          </button>
+        </div>
+      </div>
     </div>
-  </div>
-</div>
 
-<script src="js/script.js"></script>
-</body>
+    <script src="js/script.js"></script>
+    <script src="js/chosenNavbar.js"></script>
+  </body>
 </html>
